@@ -1,0 +1,19 @@
+
+.left, .right { float: left; }
+.left { width: 39%; padding-right: 10px; }
+.right { width: 60%; }
+
+.left h2 { font-size: 16px; margin-bottom: 10px; }
+.left table { width: 100%; font-size: 14px; border-collapse: collapse; }
+    .left table thead td { background: #EEE; padding-left: 5px; height: 30px; line-height: 30px; }
+    .left table tbody td { line-height: 25px; height: 25px; padding-left: 5px; }
+.right p { margin-bottom: 10px; position: relative; }
+.right h2 b { font-size: 16px; }
+.page-label { font-size: 16px; margin-bottom: 10px; }
+.page-title, .page-name { height: 30px; line-height: 30px; }
+.page-title { width: 100%; }
+.page-name { width: 80%; }
+.page-content { width: 100%; min-height: 400px; }
+.page-btn { cursor: pointer; float: right; font-size: 13px; border: 1px solid #CCC; background: #F5F5F5; background-image: -moz-linear-gradient(center top, #F5F5F5, #F1F1F1); background-image: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1); padding: 3px 10px; }
+
+.placeholder { color: #CCC; position: absolute; top: 5px; left: 5px; }

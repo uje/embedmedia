@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--[if lt IE 9]>
+    <script src="/statics/js/html5.js" type="text/javascript"></script>
+    <script>window.onerror=function(){ return true;}</script>
+    <![endif]-->
+    <link href="//www.wuyuanhe.com/statics/css/common.css" rel="stylesheet" type="text/css" />
+    {% block header %} {% endblock %}
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29300722-1']);
+        _gaq.push(['_setDomainName', 'muuou.com']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <span class="logo"></span>
+                <h1>{{ domain.title }}</h1>
+                <nav class="nav nav-h">
+                    <ul>
+                        <li data-key="index"><a href="/">首页</a></li>
+                        <li data-key="admin"><a href="/admin">管理</a></li>
+                        <li data-key="signup"><a href="/signup">注册</a></li>
+                        {% block navplus %} {% endblock %}
+                        {% for page in pages %}
+                        {% if page.showInTop %}
+                        <li data-key="{{page.name}}"><a href="/{{ page.name }}">{{ page.title }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="main" role="main">
+            {% block content %}{% endblock %}
+        </div>
+        <footer class="footer">
+            <div class="copyright">
+                <mark>&copy; <time><script>document.write((new Date()).getFullYear());</script></time> {{domain.title}} 版权所有</mark>
+                <mark>服务器由 <a href="//appengine.google.com" target="_blank">Appengine</a>提供</mark>
+                <mark>主题由 <a href="//www.wuyuanhe.com">Jame</a>提供</mark>
+            </div>
+        </footer>
+    </div>
+    {% block footer %}{% endblock %}
+</body>
+</html>

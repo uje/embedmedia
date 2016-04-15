@@ -1,0 +1,32 @@
+﻿
+/*reset*/
+html { width: 100%; height: 100%; }
+html, body, div, p, h1, h2, h3, h4, h5, h6, span, ul, ol, dl, dt, dd, table, tr, td { margin: 0; padding: 0; }
+a, a:visited, a:active, a:hover { text-decoration: none; color: blue; }
+h1, h2, h3, h4, h5, h6, b { font-size: 12px; font-weight: normal; }
+img { border: none; }
+input, textarea { resize: none; border: 1px solid #EEE; }
+ul, ol { list-style-type: none; }
+
+/*global set*/
+.center { margin: 0 auto; }
+.clear { clear: both; }
+.footer-fixed { position: fixed;bottom: 0px;left: 0px;width: 100%; }
+
+/*清浮动*/
+.cf:after { clear: both; }
+.cf { zoom: 1; overflow: hidden; }
+
+
+.select-box { display: inline-block; line-height: 25px; height: 25px; font-size: 12px;cursor: default;position: relative; }
+.select-box-title { display: block; float: left; padding: 0px 0px 0px 5px; border: 1px solid #EEE; position: relative; background: #FFF; z-index: 100; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; }
+.select-box-value { background: url(option_arrow.png) no-repeat scroll right center; padding-right: 20px;margin-right:5px; }
+.select-box-list { display: none; border: 1px solid #EEE; clear: both; position: absolute;top: 25px;min-width: 80px; background: #FFF;}
+.select-box .select-box-list li { padding: 0px 10px; cursor: pointer; }
+    .select-box .select-box-list li:hover { background: #EEE; }
+.select-box-hover .select-box-title { border-bottom: 0px; }
+.select-box-hover .select-box-list { display: block; }
+
+/*fix*/
+.select-box { *display: inline; *zoom: 1; }
+.select-box-list { _width: 80px;_zoom: 1; }

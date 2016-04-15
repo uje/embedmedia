@@ -1,0 +1,55 @@
+﻿/*reset*/
+html { width: 100%; height: 100%; }
+html, body, div, p, h1, h2, h3, h4, h5, h6, span, ul, ol, dl, dt, dd, table, tr, td { margin: 0; padding: 0; }
+a, a:visited, a:active, a:hover { text-decoration: none; color: blue; }
+h1, h2, h3, h4, h5, h6, b { font-size: 12px; font-weight: normal; }
+img { border: none; }
+input, textarea { resize: none; border: 1px solid #EEE; }
+ul, ol { list-style-type: none; }
+
+/*global set*/
+.center { margin: 0 auto; }
+.clear { clear: both; }
+.footer-fixed { position: fixed;bottom: 0px;left: 0px;width: 100%; }
+
+/*清浮动*/
+.cf:after { clear: both; }
+.cf { zoom: 1; overflow: hidden; }
+
+
+body { font-family: 'Microsoft Yahei'; }
+#bg { background: #4BA2E5;width: 100%;height: 300px; position: absolute;top: 0px;z-index: -1; }
+.page { width: 100%; height: 100%; }
+.button { padding: 4px 10px; cursor: pointer; }
+.blue-button { background: #4BA2E5; border: 1px solid #4A7BD6; color: #FFF; }
+.gray-button { background: #F3F3F3; border: 1px solid #CCC; color: #646464; }
+a,a:visited,a:active { color: #4A7BD6; }
+
+
+/*****头部*****/
+.header .container { height: 40px; background: #4BA2E5; }
+.header .header-border { height: 3px; width: 100%; background: #94D2EB;display:none; }
+.header .navigator { position: absolute;top:10px;left: 180px;}
+    .header .navigator li { cursor: default; float: left; height: 30px; line-height: 30px; color: #FFF; width: 80px; text-align: center; font-size: 14px; background:#7BC5EC; }
+        .header .navigator li.current { background: #94D2EB; color: #FFF; position: relative;z-index: 1000; }
+        .header .navigator li a { color: #FFF; }
+#logo { display: block; float: left; width: 180px; height: 100%; line-height: 40px; font-size: 18px;  color: #FFF; text-align: center; }
+
+
+.theme-switcher { position: absolute; top: 8px;right: 3%;}
+.theme-switcher .gray-button{ background: #d5e5f1;border: 0px; font-size: 12px;padding: 3px 15px;color: #7cb8e6  }
+.theme-switcher .white-button { background-color: #FFF; }
+
+/****内容****/
+.mainer { background: #FFF;/*margin:0px 3%;*/ position: absolute; top: 40px;bottom: 50px;/*box-shadow:1px 1px 5px 1px #EEE;*/padding: 10px;left:0px;right:0px;}
+
+/*****底部*****/
+.footer {height: 50px; line-height: 50px; font-size: 12px; border-top: 1px solid #EEE; margin-top: 30px; padding-left: 10px;}
+/*****版权信息*****/
+    .footer .copyright { text-align: center; }
+
+    
+    
+/*fix in IE*/
+_html, _body { *overflow-x: hidden; }
+.mainer { *left: 0px;*right: 0px;*border: 1px solid #EEE; }

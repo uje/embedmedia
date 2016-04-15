@@ -1,0 +1,47 @@
+﻿{% extends "base.html" %}
+{% block header %}
+<title>管理中心</title>
+<link href="//www.wuyuanhe.com/statics/css/admin.css?v=20120427" rel="stylesheet" type="text/css" />
+<script src="//www.wuyuanhe.com/statics/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/guide.js"></script>
+{% endblock %}
+{% block content %}
+            <div class="setting-steps">
+                <div class="line">
+                    ----------------------------------------------------------------------------------
+                </div>
+                <div class="step">
+                    登录
+                </div>
+                <div class="step current">
+                    设置域名
+                </div>
+                <div class="step">
+                    管理
+                </div>
+            </div>
+<div class="guide-domain">
+    <h1>&#9670;您是新用户，请设置域名</h1>
+    <div class="settings">
+        <p>
+            <span>名称：</span>
+            <input id="siteName" value="" />
+        </p>
+        <p>
+            <span>域名：</span>
+            <input id="siteDomain" value=".ruguo.info" />
+        </p>
+        <p>
+            <span>主题：</span>
+            <select id="theme">
+                {% for t in themes %}
+                            <option value="{{t.path}}">{{ t.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+    </div>
+    <div class="setting-buttoner">
+        <input type="button" value="提交" />
+    </div>
+</div>
+{% endblock %}

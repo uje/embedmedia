@@ -1,0 +1,20 @@
+﻿body { font-size: 14px; }
+.page { font-family: Microsoft Yahei; background: #F7F7F7; }
+
+.header { background: #53A7FF; color: #FFF; }
+.head-main, .copyright { margin: 0 auto; }
+.logo { font-size: 16px; padding: 5px 0px 5px 5px; font-weight: bold; }
+.font { float: right; margin-left: 10px; cursor: pointer; font-size: 14px; font-weight: normal; }
+
+.main { margin: 0px auto; }
+#weather { float: left; }
+#mainlink { background: #FFF; padding: 10px; margin-left: 210px; overflow: hidden; min-height: 650px; }
+    #mainlink div { margin-bottom: 5px; overflow: hidden; }
+    #mainlink a { color: #888; }
+        #mainlink div span { float: left; width: 60px; line-height: 25px; display: inline-block; }
+        #mainlink div ul { float: left; width: 94%; }
+            #mainlink div ul li { float: left; margin: 0px 10px; line-height: 25px; }
+
+.footer { background: #FFF; position: fixed; bottom: 0px; width: 100%; border-top: 1px solid #EBEBEB; }
+.footer a { color: #888; }
+.copyright { padding: 5px 0px 5px 5px; }

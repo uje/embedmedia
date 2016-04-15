@@ -1,0 +1,144 @@
+﻿{% extends "baseOld.html" %}
+{% block header %}
+<title>{{ domain.title }}</title>
+<link href="//www.wuyuanhe.com/statics/css/mainv2.css?v=20120522" rel="stylesheet" type="text/css"
+    id="theme" />
+<script src="//www.wuyuanhe.com/statics/js/kindeditor/kindeditor-min.js"></script>
+<style>
+    .page { background: #000 url(//www.ruguo.info/statics/img/bg.jpg) no-repeat scroll center top; }
+    #mainer { padding: 0 0 30px 0; margin: 0; background: transparent; position: relative; overflow-y: visible; }
+
+    #loading { color: #FFF; display: none; }
+
+
+    .weibo-sender { margin: 0 auto; width: 600px; margin-top: 10px; position: relative; padding: 10px 0; }
+        .weibo-sender .ke-container { margin-left: 10px;position:relative;z-index:2; }
+    #btnSend { height: 30px; line-height: 30px; padding: 0 20px; margin-top: 10px; margin-left: 10px;position:relative;z-index:2;cursor:pointer; }
+
+
+    .timeline { width: 600px; margin: 0 auto; position: relative; padding-top: 10px; margin-bottom: 10px; }
+    .weibo-mark { opacity: .2; filter: alpha(opacity=20); background: #FFF; height: 100%; width: 100%; position: absolute; top: 0; z-index: 1; }
+    .weibo { position: relative; z-index: 2; padding-left: 10px; margin: 10px; margin-bottom: 20px; padding-top: 10px; border-top: 1px solid #888; }
+    .weibo-avatar { float: left; width: 50px; margin-right: 10px; }
+    .weibo-content { float: left; width: 510px; font-size: 14px; color: #FFF; line-height: 25px; }
+    .weibo-header { margin-bottom: 10px; }
+        .weibo-header a { font-size: 16px; color: #FFF; }
+    .weibo-footer { margin-top: 20px; }
+
+    .ke-statusbar { display: none; }
+</style>
+<script>
+    var editor;
+    KindEditor.ready(function (K) {
+        editor = K.create('#editor', {
+            items: ['code', 'formatblock', 'fontname', 'fontsize', 'forecolor', 'hilitecolor', 'bold',
+                'image', 'multiimage', 'flash', 'media', 'emoticons', 'baidumap', 'link', 'unlink'],
+            allowFileManager: false,
+            resizeType: 'simple',
+            useContextmenu: false
+        });
+    });
+</script>
+{% endblock %}
+{% block navplus %}
+{% endblock %}
+{% block content %}
+<div id="loading">正在努力加载数据...</div>
+<div class="weibo-sender">
+    <div class="weibo-mark"></div>
+    <textarea id="editor" style="width:580px; margin-left: 10px;"></textarea>
+    <input type="button" value="发送" id="btnSend" />
+</div>
+<div class="timeline cf">
+    <div class="weibo-mark">
+    </div>
+    <div class="weibo cf">
+        <div class="weibo-avatar">
+            <a href="javascript:;">
+                <img title="当时我就泪奔了" alt="" src="http://tp1.sinaimg.cn/1733787604/50/5624849582/1" height="50" width="50" /></a>
+        </div>
+        <div class="weibo-content">
+            <div class="weibo-header">
+                <a href="javascript:;">十万个为什么</a>
+            </div>
+            <div class="weibo-body">
+                就黄灯禁行新交规 熊猫答中外记者问】没想到镜外势力也关心黄灯新规。《南边周末》提问依然尖锐，发言人怎么回答的？《宇宙时报》说“黄灯”是反腐信号灯，依然很有想像力！日本记者问为何中国海监船安装黄灯警告装置？韩国人说端午节是他们发明的，尼玛闯黄灯也是他们发明的
+            </div>
+            <div class="weibo-footer">
+                <span class="weibo-time">2013-01-01 12:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="weibo cf">
+        <div class="weibo-avatar">
+            <a href="javascript:;">
+                <img title="当时我就泪奔了" alt="" src="http://tp1.sinaimg.cn/1733787604/50/5624849582/1" height="50" width="50" /></a>
+        </div>
+        <div class="weibo-content">
+            <div class="weibo-header">
+                <a href="javascript:;">十万个为什么</a>
+            </div>
+            <div class="weibo-body">
+                就黄灯禁行新交规 熊猫答中外记者问】没想到镜外势力也关心黄灯新规。《南边周末》提问依然尖锐，发言人怎么回答的？《宇宙时报》说“黄灯”是反腐信号灯，依然很有想像力！日本记者问为何中国海监船安装黄灯警告装置？韩国人说端午节是他们发明的，尼玛闯黄灯也是他们发明的
+            </div>
+            <div class="weibo-footer">
+                <span class="weibo-time">2013-01-01 12:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="weibo cf">
+        <div class="weibo-avatar">
+            <a href="javascript:;">
+                <img title="当时我就泪奔了" alt="" src="http://tp1.sinaimg.cn/1733787604/50/5624849582/1" height="50" width="50" /></a>
+        </div>
+        <div class="weibo-content">
+            <div class="weibo-header">
+                <a href="javascript:;">十万个为什么</a>
+            </div>
+            <div class="weibo-body">
+                就黄灯禁行新交规 熊猫答中外记者问】没想到镜外势力也关心黄灯新规。《南边周末》提问依然尖锐，发言人怎么回答的？《宇宙时报》说“黄灯”是反腐信号灯，依然很有想像力！日本记者问为何中国海监船安装黄灯警告装置？韩国人说端午节是他们发明的，尼玛闯黄灯也是他们发明的
+            </div>
+            <div class="weibo-footer">
+                <span class="weibo-time">2013-01-01 12:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="weibo cf">
+        <div class="weibo-avatar">
+            <a href="javascript:;">
+                <img title="当时我就泪奔了" alt="" src="http://tp1.sinaimg.cn/1733787604/50/5624849582/1" height="50" width="50" /></a>
+        </div>
+        <div class="weibo-content">
+            <div class="weibo-header">
+                <a href="javascript:;">十万个为什么</a>
+            </div>
+            <div class="weibo-body">
+                就黄灯禁行新交规 熊猫答中外记者问】没想到镜外势力也关心黄灯新规。《南边周末》提问依然尖锐，发言人怎么回答的？《宇宙时报》说“黄灯”是反腐信号灯，依然很有想像力！日本记者问为何中国海监船安装黄灯警告装置？韩国人说端午节是他们发明的，尼玛闯黄灯也是他们发明的
+            </div>
+            <div class="weibo-footer">
+                <span class="weibo-time">2013-01-01 12:00</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="bodyMark" class="body-mark"></div>
+<script type="text/tmpl" id="weibo">
+    <div class="weibo cf">
+        <div class="weibo-avatar">
+            <a href="javascript:;">
+                <img title="${item.anthor}" alt="" src="${item.figuare}" height="50" width="50" /></a>
+        </div>
+        <div class="weibo-content">
+            <div class="weibo-header">
+                <a href="javascript:;">${item.anthor}</a>
+            </div>
+            <div class="weibo-body">
+                {{item.weibocontent}}
+            </div>
+            <div class="weibo-footer">
+                <span class="weibo-time">${item.createtime}</span>
+            </div>
+        </div>
+    </div>
+</script>
+{% endblock %}

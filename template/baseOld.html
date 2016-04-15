@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+	<!--[if lt IE 9]>
+	<script src="http://jease.net/wp-content/themes/jease/js/html5.js" type="text/javascript"></script>
+	<script>window.onerror=function(){ return true;}</script>
+	<![endif]-->
+    <link href="//www.wuyuanhe.com/statics/css/{{domain.themeName}}.css?v=20120526" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//www.wuyuanhe.com/statics/js/jquery.plugin.js"></script>
+    <link href="//www.wuyuanhe.com/statics/js/artdialog/skins/muuou.css" rel="stylesheet" type="text/css" />
+    {% block header %} {% endblock %}
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29300722-1']);
+        _gaq.push(['_setDomainName', 'muuou.com']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        function setNav(key) {
+            $('.navigator').removeClass("current");
+            $('.navigator li[data-key="{0}"]'.replace("{0}", key)).addClass("current");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="container cf">
+                <span id="logo">{{ domain.title }}</span>
+                <ul class="navigator">
+                    <li data-key="index"><a href="/">首页</a></li>
+                    <li data-key="admin"><a href="/admin">管理</a></li>
+                    {% block navplus %} {% endblock %}
+                    {% for page in pages %}
+                    {% if page.showInTop %}
+                    <li data-key="{{page.name}}"><a href="/{{ page.name }}">{{ page.title }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                <div class="search">
+                    <input placeholder="包含的名称或网址" class="keyword" />
+                    <button class="btnSearch">搜索</button>
+                </div>
+            </div>
+            <div class="header-border"></div>
+        </div>
+        <div class="mainer cf" id="mainer">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="footer cf">
+            <div class="container">
+                <span>Copyright &copy;
+                <script type="text/javascript">document.write(new Date().getFullYear());</script>
+                     {{domain.title}}. All rights reserved. </span>
+                <span>由:<a href="//www.wuyuanhe.com">yuanhe</a>,<a href="//appengine.google.com">Google Appengine</a>强力驱动</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

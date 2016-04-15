@@ -1,0 +1,26 @@
+﻿{% extends "base.html" %}
+{% block header %}
+<title>{{ domain.title }}</title>
+{% endblock %}
+{% block content %}
+<div class="search active">
+    <input id="keyword" placeholder="输入名称或网址查找" class="inp-text keyword" />
+</div>
+<aside class="aside">
+    <h2>标签</h2>
+    <menu id="tagCloud">
+    </menu>
+</aside>
+<div id="links" class="content">
+	<div class="loading">努力加载中...</div>
+</div>
+{% endblock %}
+{% block footer %}
+<script src="//www.wuyuanhe.com/statics/js/seajs/sea.js" id="seajsnode"></script>
+<script>
+    seajs.use('app/controller/main', function (main) {
+        main.set_nav('index');
+        main.getLinks('/getlinks');
+    });
+</script>
+{% endblock %}

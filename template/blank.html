@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+{% block header %}
+    <title>{{title}}</title>
+<link href="//www.wuyuanhe.com/statics/css/mainv2.css?v=20120522" rel="stylesheet" type="text/css"
+    id="theme" />
+<style type="text/css">
+    .footer { width: 100%; padding: 20px 0; background-color: #eee; text-align: center; }
+    .footer .copyright { position: static; }
+    .footer mark { display: inline-block !important; }
+</style>
+<script>$(function () { setNav('{{ name }}'); });</script>
+{% endblock %}
+{% block content %}
+    {% autoescape off %}
+    {{content}}
+    {% endautoescape %}
+{% endblock %}

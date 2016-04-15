@@ -1,0 +1,74 @@
+﻿/*reset*/
+html, body, form { width: 100%; height: 100%; }
+html, body, div, p, h1, h2, h3, h4, h5, h6, span, ul, ol, dl, dt, dd, table, tr, td { margin: 0; padding: 0; }
+a, a:visited, a:active, a:hover { text-decoration: none; color: blue; }
+h1, h2, h3, h4, h5, h6, b { font-weight: normal; }
+img { border: none; }
+input, textarea, button { resize: none; border: 1px solid #EEE; }
+ul, ol { list-style-type: none; }
+
+/*global set*/
+.center { margin: 0 auto; }
+.clear { clear: both; }
+.footer-fixed { position: fixed; bottom: 0px; left: 0px; width: 100%; }
+
+/*清浮动*/
+/*清浮动*/
+.cf:after { clear:both; content:""; display:block;visibility:hidden; }
+.cf { zoom: 1;  }
+
+
+body { font-family: 'Microsoft Yahei'; }
+#bg { background: #4BA2E5; width: 100%; height: 300px; position: absolute; top: 0px; z-index: -1; display: none; }
+.page { width: 100%; min-height: 100%; position: relative; }
+.button { padding: 4px 10px; cursor: pointer; }
+.blue-button { background: #4BA2E5; border: 1px solid #4A7BD6; color: #FFF; }
+.gray-button { border: 1px solid #CCC; color: #646464; }
+a, a:visited, a:active { color: #4A7BD6; }
+
+
+/*****头部*****/
+.header .container { height: 30px; padding: 10px 0px; background: #4BA2E5; overflow: hidden; }
+.header .header-border { height: 3px; width: 100%; background: #94D2EB; display: none; }
+.header .navigator {  left: 180px; }
+    .header .navigator li { cursor: default; float: left; height: 30px; line-height: 30px; color: #EEE; text-align: center; font-size: 13px; /*background:#7BC5EC;*/ padding: 0px 10px; }
+        .header .navigator li.current { /*background: #94D2EB;*/ color: #FFF; position: relative; z-index: 1000; font-size: 18px; line-height: 26px; height: 28px; }
+        .header .navigator li:hover, .theme-switcher a:hover { background: #3D9BE2; }
+        .header .navigator li a { color: #FFF; }
+#logo { display: block; float: left; padding:0 10px;height: 100%; font-size: 30px; color: #FFF; text-align: center; line-height: 30px; }
+.header .search { position: relative; top: 2px; display: none; }
+    .header .search .btnSearch { padding: 2px 3px; background: #EEE; margin-left: -5px; }
+    .header .search input { height: 20px; line-height: 20px; background: #EEE; }
+        .header .search input::-webkit-input-placeholder, .header .search input::-moz-placeholder { color: #CCC; }
+
+
+.theme-switcher { position: absolute; top: 2px; right: 3%; display: none; }
+    .theme-switcher .gray-button { border: 0px; font-size: 12px; padding: 0px 8px; color: #7cb8e6; }
+    .theme-switcher .white-button { color: #FFF; }
+#view { border-right: 1px solid #7CB8E6; }
+
+/****内容****/
+.mainer { background: #FFF; /*margin:0px 3%;box-shadow:1px 1px 5px 1px #EEE;*/ padding: 10px 10px 60px 10px; }
+
+/*****底部*****/
+.footer { font-size: 12px; border-top: 1px solid #EEE; height: 30px; bottom: 0; width: 100%; background: #EEE; position: absolute; }
+    .footer .container { margin-top: 5px; padding-left: 5px; }
+    .footer span { text-align: left; font-family: 'Microsoft YaHei','Segoe UI'; height: 22px; width: 400px; line-height: 22px; color: #333; font-size: 14px; }
+
+
+/*arrow from css88.com*/
+.diamond { -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865475, SizingMethod='auto expand')"; filter: progid:DXImageTransform.Microsoft.Matrix( M11=0.7071067811865475, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865475, SizingMethod='auto expand' ); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+:root .diamond { filter: none\9; }
+/*ie9 hack*/
+
+.tips { position: absolute; background: #fff8e8; border: 1px solid #ffba00; padding: 10px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+.tips-top { position: absolute; display: block; width: 8px; height: 8px; font-size: 0; background: #fff8ef; border-left: 1px solid #ffba00; border-top: 1px solid #ffba00; top: -5px; top: -6px\9; _top: -7px; left: 10px; }
+.tips-bottom { position: absolute; display: block; width: 8px; height: 8px; font-size: 0; background: #fff8ef; border-right: 1px solid #ffba00; border-bottom: 1px solid #ffba00; bottom: -5px; bottom: -6px\9; _bottom: -7px; left: 10px; }
+.tips-left { position: absolute; display: block; width: 8px; height: 8px; font-size: 0; background: #fff8ef; border-left: 1px solid #ffba00; border-bottom: 1px solid #ffba00; left: -5px; left: -6px\9; _left: -7px; top: 10px; }
+.tips-right { position: absolute; display: block; width: 8px; height: 8px; font-size: 0; background: #fff8ef; border-right: 1px solid #ffba00; border-top: 1px solid #ffba00; right: -5px; right: -6px\9; _right: -7px; top: 10px; }
+
+
+/*fix in IE*/
+_html, _body { *overflow-x: hidden; }
+.mainer { *left: 0px; *right: 0px; *border: 1px solid #EEE; _position: static; }
+#bg { _display: none; }

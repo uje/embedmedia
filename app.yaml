@@ -1,0 +1,37 @@
+application: embedmedia
+version: 3
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+default_expiration: "30d"
+
+
+handlers:
+- url: /favicon.ico
+  static_files: statics/favicon.ico
+  upload: statics/favicon.ico
+
+- url: /robots.txt
+  static_files: statics/robots.txt
+  upload: statics/robots.txt
+
+- url: /bookmark.crx
+  static_files: statics/bookmark.crx
+  upload: static/bookmark.crx
+  mime_type: application/octet-stream
+- url: /statics
+  static_dir: statics
+
+- url: /admin|/admin/(.+)
+  script: admin.app
+
+- url: /api/(.+)
+  script: api.app
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.1"

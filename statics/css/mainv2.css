@@ -1,0 +1,42 @@
+﻿.page { background: #DDD; color:#000; }
+.page:a{color:#000;}
+#mainer { position: relative; padding: 0 0 60px 0; margin: 0; background: transparent; }
+#loading { margin: 100px auto; padding: 5px 5px; width: 120px;background:#FFF;border: 1px solid #EEE; font-weight: normal; font-size: 12px; color: #333; }
+
+/*****搜索*****/
+.search-area { padding: 10px 0 20px 0; background: #4BA2E5; text-align: left; }
+.keyword { padding: 0 5px;margin-left:10px; width: 30%; height: 30px; border: 0; line-height: 30px; }
+.lb-keyword { margin: 0 10px; color: #FFF; font-size: 20px; }
+.btnSearch { padding: 3px 20px; border-radius: 2px; margin-left: 10px; background: #3D9400; background-image: -moz-linear-gradient(center top, #3D9400, #398A00); border: 0; color: #FFF; font-size: 16px; font-family: 'Microsoft YaHei'; }
+.ac_results { z-index: 100; background: #FFF; }
+    .ac_results li { padding: 3px 5px; }
+        .ac_results li a { display: inline-block; height: 100%; zoom: 1; font-size: 14px; }
+.ac_odd { }
+.ac_over { background: #4BA2E5; color: #FFF; }
+.ac_results .ac_over a { color: #FFF; }
+a.tag-active { font-size: 20px; }
+
+/*****盒子*****/
+#links { position: relative; z-index: 2; margin: 0 10px; }
+.links-mark { display:none;position: absolute; z-index: 1; left: 0; right: 0; top: 70px; background: #FFF; opacity: .2; filter: alpha(opacity=20); }
+.box { display: inline-block; _display: inline; zoom: 1; width: 31%; padding: 10px;margin:10px 0 0; background: #FFF;border:1px solid #CCC; font-size: 14px; }
+    .box h2 {  padding-bottom: 5px; border-bottom: 0; color: #000; text-align: left; font-size: 16px; }
+    .box .content { text-align: left; /*word-break:break-all; word-wrap:break-word;*/ }
+    .box a { display: inline-block; _display: inline; zoom: 1; margin-right: 10px;line-height: 2.2;font-size:15px; color: #666; }
+        .box a:hover { text-decoration: underline; }
+
+.tags { display: inline-block; zoom: 1; overflow: hidden; text-overflow: ellipsis; position: relative; top: 5px; margin-left: 10px; }
+    .tags a { color: #FFF; margin-right: 10px; }
+
+	#links .focus { font-size:20px;}
+	#links .focus a{ color:#4BA2E5;}
+p.s-link-mark { color: #CCC; font-size: 12px; line-height: 16px; }
+
+
+@media (max-width:760px),(max-device-width:760px) {
+    .page { background: #FFF; }
+    .search-area { display: none; }
+    .tags { display: none; }
+    .box { padding:0; width: 100%; min-width: 240px;border:0; }
+	.box a{font-size:16px;}
+}

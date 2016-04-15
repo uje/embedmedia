@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!--[if lt IE 9]>
+        <script src="/statics/js/html5.js" type="text/javascript"></script>
+        <script>window.onerror=function(){ return true;}</script>
+        <![endif]-->
+        <title>登录您的帐户</title>
+        <link href="//www.wuyuanhe.com/statics/css/common.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+
+            .c-field-wrapper { padding: 10px 5px; border: 1px solid #ccc; margin-bottom: 20px; }
+            .c-field { width: 100%; border-width: 0; }
+            .c-btn { display: block; width: 100%; border-width: 0; background: #3675b4; text-align: center; font-size: 18px; line-height: 36px; color: #fff; }
+
+            .header { position: static; }
+            .p-login { width: 100%; max-width: 320px; padding: 20px; margin: 60px auto; border: 1px solid #eee; }
+            .main h2 { margin: 20px 0 30px; font-size: 20px; text-align: center; }
+            .main form .c-btn { margin-top: 30px; }
+        </style>
+    </head>
+    <body>
+        <header class="header"><h1>收藏夹</h1></header>
+        <div class="main">
+            <form class="p-login" action="/admin/login" method="post">
+                <div><h2>登录您的帐户</h2></div>
+                <div class="c-field-wrapper"><input name="uid" id="uid" class="c-field" placeholder="您的帐号" /></div>
+                <div class="c-field-wrapper"><input name="pwd" id="pwd" class="c-field" type="password" placeholder="您的密码" /></div>
+                <button class="c-btn" type="submit">登录</button>
+            </form>
+        </div>
+        <footer class="footer"></footer>
+        <script src="//www.wuyuanhe.com/statics/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var $uid = $('#uid'), $pwd = $('#pwd');
+
+
+                $('form').on('submit', function(event){
+
+                    if($.trim($uid.val()) === ''){
+                        alert('请填写帐号！');
+                        return;
+                    }
+
+                    if($.trim($pwd.val()) === ''){
+                        alert('请填写密码！');
+                        return;
+                    }
+
+                    event.preventDefault();
+                    login($uid.val(), $pwd.val());
+                });
+
+                function login(uid, pwd) {
+                    $.ajax({
+                        url        : '/admin/login'
+                        , type     : 'post'
+                        , data     : { uid: uid, pwd: pwd }
+                        , dataType : 'json'
+                        , success  : function(r){
+                            if(r.message){
+                                alert(r.message);
+                                return;
+                            }else if(r.code == 200){
+                                location.href = '/admin';
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

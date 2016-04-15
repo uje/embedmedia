@@ -1,0 +1,65 @@
+﻿{% extends "baseOld.html" %}
+{% block header %}
+<title>管理中心</title>
+<link href="//www.wuyuanhe.com/statics/css/pages.css?v=20120807" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/html5.js"></script>
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/kindeditor/kindeditor-min.js"></script>
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/page.js"></script>
+<script type="text/javascript">
+    var editor;
+    KindEditor.ready(function (K) {
+        editor = K.create('textarea[name="content"]', {
+            allowFileManager: true,
+            designMode: false
+        });
+    });
+    $(function () { setNav("pages"); });
+</script>
+{% endblock %}
+{% block navplus %}
+    <li data-key="pages"><a href="/admin/pages">页面</a></li>
+{% endblock %}
+{% block content %}
+            <div class="left">
+                <h2>页面管理
+                    <button class="page-btn" id="btnNew">新增</button></h2>
+                <table class="page-manager-area">
+                    <thead>
+                        <tr>
+                            <td>页面名称</td>
+                            <td>页面标题</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for page in pages %}
+                    <tr pagename="{{page.name}}">
+                        <td class="l-page-name"><a href="/{{page.name}}">{{page.name}}</a></td>
+                        <td class="l-page-title">{{page.title}}</td>
+                        <td><a href="javascript:;" class="page-edit">编辑</a>
+                            <a href="javascript:;" class="page-delete">删除</a>
+                        </td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+<div class="right">
+    <h2 class="page-label"><b>添加新页面</b><span>
+        <button class="page-btn" id="btnAdd">保存</button></span></h2>
+    <p>
+        <input type="hidden" name="oname" class="page-name" id="pageOldName" />
+        <input name="name" class="page-name" id="pageName" placeholder="页面名称，用于链接" />
+        <input type="checkbox" value="0" id="showInTop" /><label for="showInTop">显示在顶部</label>
+    </p>
+    <p>
+        <input name="title" class="page-name" id="pageTitle" placeholder="页面名称与标题" />
+        <input type="checkbox" value="0" id="useFrame" /><label for="useFrame">使用框架</label>
+    </p>
+    <p>
+        <textarea name="content" class="page-content" id="pageContent" placeholder="页面的html内容">
+                    </textarea>
+    </p>
+
+</div>
+{% endblock %}

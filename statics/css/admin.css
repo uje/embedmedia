@@ -1,0 +1,102 @@
+﻿
+#logo { display: block; float: left; width: 180px; height: auto; color: #FFF; text-align: center; }
+
+
+/****内容****/
+.mainer .left { float: left; width: 69%; }
+.mainer .right { float: right; width: 30%; /*position: fixed !important; right: 0.5% !important;*/ }
+.tags, .domains { padding: 10px; }
+.links-tool { margin: 10px 0px 0px; /*border-bottom: 1px dotted #EEE;*/ padding-bottom: 5px; padding-left: 5px; }
+    .links-tool .right-tools { float: right; }
+
+    .links-tool .tag-box { float: left; margin-right: 10px; font-size: 14px; }
+        .links-tool .tag-box .tag-title { position: relative; top: -5px; }
+#filterKey { padding: 3px 0px; }
+.links { /*border: 1px solid #EEE;*/ }
+
+    .links .link-header { /*background: #F3F3F3;*/ border-bottom: 1px solid #EEE; }
+        .links .link-header table { width: 100%; }
+        .links .link-header thead td { height: 40px; color: #000; font-size: 14px; font-weight: bold; /*padding-bottom: 8px;*/ }
+        .links .link-header .link-checkbox { padding-left: 5px; }
+    .links .link-checkbox { width: 5%; }
+    .links .tag-name { width: 15%; }
+    .links .link-name { width: 20%; }
+    .links .link-href { width: 45%; }
+    .links .link-ctrl { width: 14%; }
+    .links .link-change { margin-right: 10px; }
+    .links .link { border-bottom: 1px dashed #EEE; font-size: 13px; height: 35px; line-height: 35px; padding-left: 5px; color: #646464; }
+        .links .link span { display: inline-block; height: 35px; overflow: hidden; }
+
+
+.line { margin-bottom: 10px; }
+
+.right-box { background: #F6F9FF; padding: 10px; }
+    .right-box h2 { padding-bottom: 3px; margin-bottom: 20px; border-bottom: 1px dashed #EEE; font-size: 14px; }
+
+/*****添加新链接*****/
+.new-link .field { height: 25px; line-height: 25px; min-width: 220px; padding: 0px 5px; }
+.new-link .button { margin-left: 76px; }
+.new-link .line .title { font-size: 14px; }
+.new-link .ac-tags { position: absolute;z-index:100; background: #FFF; left: 75px; min-width: 230px; display: none; }
+    .new-link .ac-tags a { display: block; line-height: 25px; height: 25px; padding: 0px 10px; font-size: 12px; }
+        .new-link .ac-tags a:hover { background: #EEE; }
+#tagsBox { position: relative; }
+.tagsBox-show input { border-bottom-color: #FFF; }
+.tagsBox-show .ac-tags { display: block; border: 1px solid #EEE; border-top-color: #FFF; }
+#msg { font-size: 13px; color: #f53961; }
+
+/*****站点设置*****/
+.domains { margin-top: 10px; background: #E8F5FC; }
+    .domains .inner-domain { background: #FFF; font-size: 14px; text-align: center; padding: 5px 5px 20px 5px; }
+        .domains .inner-domain h2 { text-align: left; }
+        .domains .inner-domain .content { text-align: left; width: 60%; margin: 0 auto; }
+        .domains .inner-domain a { margin-left: 5px; }
+
+#oauth { margin-top: 10px;font-size:13px; }
+#oauth .content { width: 80%; text-align:left; padding:10px;}
+    #oauth .oauth-title { position: relative; }
+#oauth .oauth-title a { font-size: 12px; }
+    #oauth .tips { top: 23px;display:none; }
+    #oauth .tips-top { left: 80px; }
+
+.settings p { margin: 5px 0px; font-size: 13px; }
+.settings input { padding: 0px 5px; line-height: 22px; height: 22px; width: 180px; }
+.settings .current { border: 1px solid #4BA2E5; }
+.settings .current-domain { border: 1px solid #4BA2E5; border-left: 0; }
+#siteDomain { width: 180px;}
+
+#siteTheme { width: 192px;padding:3px; }
+.root-domain { border: 1px solid #EEE; border-left: 0px; padding: 1px 3px 2px 0px; }
+
+
+/****分类列表*****/
+.tags { /*border: 1px solid #EEE;*/ margin-top: 10px; }
+    .tags a { font-size: 13px; margin: 0px 8px; }
+
+
+
+
+/* guide page */
+
+.setting-steps { margin: 100px auto 10px; position: relative; text-align: center; width: 600px; }
+    .setting-steps .line { position: absolute; top: 30px; color: #F6F9FF; z-index: -1; }
+
+    .setting-steps .step { font-size: 12px; display: inline-block; background: #FFF; height: 80px; width: 80px; line-height: 80px; text-align: center; border-radius: 40px; border: 1px solid #EEE; margin-right: 50px; }
+    .setting-steps div.current { background: #4BA2E5; color: #FFF;border:0; }
+
+.guide-domain { text-align: center; margin: 80px auto; width: 420px; /*position: absolute;top: 50%;left: 50%;margin-left:-180px;margin-top:-100px;*/ }
+    .guide-domain h1 { border-bottom: 1px dashed #EEE; padding-bottom: 5px; font-size: 14px; text-align: left; margin: 10px; }
+    .guide-domain .settings { margin: 30px 0px; display: inline-block; padding: 10px; }
+        .guide-domain .settings input { height: 30px; line-height: 30px; }
+        .guide-domain .settings .root-domain { height: 27px; line-height: 27px; display: inline-block; position: relative; top: 1px; }
+    .guide-domain #siteName { width: 300px; }
+    .guide-domain #siteDomain { width: 300px; }
+    .guide-domain #theme { width: 312px;padding:5px; }
+    .guide-domain .setting-buttoner { padding: 5px 0px 10px 0px; text-align: right;font-size: 12px; }
+        .guide-domain .setting-buttoner input { margin-right: 30px; padding: 6px 15px; cursor: pointer; background: #FFF; }
+
+
+/*fix */
+.tagsBox-show .ac-tags { *top: 28px; }
+.footer { width:  100% !important; }
+.footer mark { display: inline-block !important; }

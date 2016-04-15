@@ -1,0 +1,24 @@
+﻿{% extends "base.html" %}
+{% block header %}
+<title>帐号注册</title>
+<link href="//www.wuyuanhe.com/statics/css/mainv2.css?v=20120522" rel="stylesheet" type="text/css"
+    id="theme" />
+<style type="text/css">
+    .signup-tip { position: relative; width: 500px; text-align: center; margin: 200px auto; word-break: break-all; word-wrap: break-word; border: 1px solid #EEE; padding: 20px; font-size: 14px; line-height: 2; text-indent: 20px; }
+    .signup-bg-top { position: absolute; top: -5px; left: -5px; width: 20px; height: 20px; border-left: 1px solid #EEE; border-top: 1px solid #EEE; }
+    .signup-bg-bottom { position: absolute; bottom: -5px; right: -5px; width: 20px; height: 20px; border-right: 1px solid #EEE; border-bottom: 1px solid #EEE; }
+
+    .footer { width: 100%; padding: 20px 0; background-color: #eee; text-align: center; }
+    .footer .copyright { position: static; }
+    .footer mark { display: inline-block !important; }
+</style>
+<script>$(function () { setNav("signup"); });</script>
+{% endblock %}
+{% block content %}
+            <div class="signup-tip">
+                当前无法注册新帐户，如有需要请与管理员联系！
+                <div class="signup-bg-top"></div>
+                <div class="signup-bg-bottom"></div>
+            </div>
+
+{% endblock %}

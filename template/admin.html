@@ -1,0 +1,144 @@
+﻿{% extends "baseOld.html" %}
+{% block header %}
+<title>管理</title>
+<link href="//www.wuyuanhe.com/statics/js/jselect/jselect.css" rel="stylesheet" type="text/css" />
+<link href="//www.wuyuanhe.com/statics/css/admin.css?v=20120522" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/jselect/jselect.min.js"></script>
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/admin.js?v=20120623"></script>
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/jquery.tmpl/jquery.tmpl.min.js"></script>
+<script>$(function () {
+    setNav("admin");
+    $('li[data-key="index"]>a').attr("href", "http://" + $("#myDomain").text());
+});
+</script>
+{% endblock %}
+{% block navplus %}
+    <li data-key="pages"><a href="/admin/pages">页面</a></li>
+<li data-key="logou"><a href="/admin/logout">退出</a></li>
+{% endblock %}
+{% block content %}
+
+<div class="left">
+    <div class="links">
+        <div class="links-tool">
+            <div class="tag-box">
+                <span class="tag-title">分类：</span>
+                <select id="selTags">
+                    <option value="0">所有链接</option>
+                </select>
+            </div>
+            <div class="right-tools">
+                <input id="filterKey" />
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="link-header">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <td class="link-checkbox">
+                            <input id="checkAll" type="checkbox" /></td>
+                        <td class="tag-name">分类名称</td>
+                        <td class="link-name">链接名称</td>
+                        <td class="link-href">链接地址</td>
+                        <td class="link-ctrl">操作</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="link-content" id="links">
+            <div id="loading">正在加载数据...</div>
+        </div>
+    </div>
+    <div class="links-tool">
+        <input type="button" class="button gray-button multi-del" value="删除" />
+    </div>
+</div>
+<div class="right">
+    <div class="new-link right-box">
+        <h2>添加新链接</h2>
+        <p class="line">
+            <span class="title">链接名称：</span>
+            <input class="field" id="linkName" autocomplete="off" />
+        </p>
+        <p class="line">
+            <span class="title">链接地址：</span>
+            <input class="field" id="linkHref" autocomplete="off" />
+        </p>
+        <div class="line" id="tagsBox">
+            <span class="title">分类名称：</span>
+            <input class="field" id="linkTag" autocomplete="off" />
+            <div id="acTags" class="ac-tags">
+            </div>
+        </div>
+        <p class="line">
+            <input type="button" id="addNewLink" class="button blue-button" value="提交" />
+            <span id="msg"></span>
+        </p>
+    </div>
+    <div class="domains right-box">
+        <div class="inner-domain">
+            <h2>您的信息:<a id="settings" href="javascript:;">[设置]</a></h2>
+            <div class="content">
+                <p>名称：<b id="mySiteName">{{ domain.title }}</b></p>
+                <p>域名：<b id="myDomain">{{ domain.domain }}</b></p>
+                <p>主题：<b id="theme" theme="{{domain.theme.path}}">{{domain.theme.name}}</b></p>
+            </div>
+        </div>
+    </div>
+    <div id="oauth" class="right-box">
+        <div>
+            <div class="oauth-title">
+                您的授权码：<a href="javascript:;">这是什么？</a>
+                <div class="tips">
+                    <div class="diamond tips-top"></div>
+                    <div class="tips-content">
+                        <p>
+                            如图，您可在安装Chrome扩展后通过快捷方式收藏你的网址
+                                    <img src="//www.muuou.com/statics/img/extension.png" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <span id="token">{{id}}</span><a id="resetToken" href="javascript:;">重设</a>
+                <p><a href="//www.muuou.com/statics/bookmark.crx">Google Chrome控件下载</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="tags right-box">
+        <h2>分类列表</h2>
+        <div class="tag-list" id="tagList">
+        </div>
+    </div>
+</div>
+<script type="text/tmpl" id="linkTmpl">
+        <div class="link" lname="${title}" lurl="${url}" ltag="${tag}">
+            <span class="link-checkbox">
+                <input type="checkbox" />
+            </span><span class="tag-name">${tag}</span><span class="link-name" title="${title}">
+                ${title}</span><span class="link-href" title="${url}">${url}
+                </span><span class="link-ctrl"><a href="javascript:;" class="link-change">修改</a><a
+                    href="javascript:;" class="link-del">删除</a></span>
+        </div>
+</script>
+<script type="text/tmpl" id="tagTmpl">
+        <a href="javascript:;">${$data}</a>
+</script>
+<script type="text/dialog-tmpl" id="settingsDialog">
+        <div class="settings">
+            <p><span>名称：</span><input id="siteName" value=""/></p>
+            <p><span>域名：</span><input id="siteDomain" value=""/></p>
+            <input id="siteTheme" name="siteTheme" type="hidden" />
+        </div>
+</script>
+<script type="text/dialog-tmpl" id="linkChangeDialog">
+        <div>
+            <div class="settings">
+                <p><span>名称：</span><input id="mLinkName" value="${title}"/></p>
+                <p><span>网址：</span><input id="mLinkUrl" value="${url}"/></p>
+                <p><span>分类：</span><input id="mLinkTag" value="${tag}"/></p>
+            </div>
+        </div>
+</script>
+{% endblock %}

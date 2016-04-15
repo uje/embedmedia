@@ -1,0 +1,33 @@
+﻿{% extends "baseOld.html" %}
+{% block header %}
+<title>{{ domain.title }}</title>
+<link href="//www.wuyuanhe.com/statics/css/mainv2.css?v=20120522" rel="stylesheet" type="text/css"
+    id="theme" />
+<script type="text/javascript" src="//www.wuyuanhe.com/statics/js/site.core.js"></script>
+<script>
+	$(function(){
+	    setNav("index");
+	});
+</script>
+{% endblock %}
+{% block navplus %}
+    <li data-key="signup"><a href="/signup">注册</a></li>
+{% endblock %}
+{% block content %}
+<div class="search-area">
+    <input class="keyword" placeholder="输入关键词进行查找" />
+    <span class="tags" id="tagCloud"></span>
+</div>
+<div id="loading">正在努力加载数据...</div>
+<div id="linksMark" class="links-mark"></div>
+<script type="text/tmpl" id="linkTmpl">
+        <div class="box" data-tag="${tag}">
+			<h2>${tag}</a></h2>
+			<div class="content">
+				[[each links]]
+				<a href="${url}" title="${title}" target="_blank">${title}</a>
+				[[/each]]
+			</div>
+        </div>
+</script>
+{% endblock %}

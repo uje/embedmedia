@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ domain.title }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0" />
+    <link href="//www.wuyuanhe.com/statics/css/reset.min.css" rel="stylesheet" type="text/css" />
+    <link href="//www.wuyuanhe.com/statics/css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.3.min.js"></script>
+    <!--    <script type="text/javascript" src="/statics/js/jquery-1.4.2.min.js"></script>-->
+    <script type="text/javascript" src="//www.wuyuanhe.com/statics/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="//www.wuyuanhe.com/statics/js/jquery.tmpl/jquery.tmpl.min.js"></script>
+    <script type="text/javascript">
+        var data = {{data}};
+    </script>
+    <script type="text/javascript">
+
+        
+        //$(function () {
+        //    var html = [];
+        //    for (var i = 0; i < data.length; i++) {
+        //        var item = data[i];
+        //        var innerHtml = [];
+        //        innerHtml.push('<div class="linkList">');
+        //        innerHtml.push('<span>' + item.tag + '：</span><ul>');
+        //        for (var j = 0; j < item.links.length; j++) {
+        //            var link = item.links[j];
+        //            innerHtml.push('<li><a href="' + link.url + '">' + link.title + '</a></li>');
+        //        }
+        //        innerHtml.push("</ul></div>");
+        //        html.push(innerHtml.join(""));
+        //    }
+        //    $(html.join("")).appendTo("#mainlink");
+        //});
+        $(function () {
+            if ($.cookie("homeFontSize")) {
+                $("body").css("font-size", $.cookie("homeFontSize"));
+            }
+
+            $("#fontAdd").click(function () {
+                var size = parseInt($("body").css("font-size").replace("px"));
+                if (size < 26) {
+                    $("body").css("font-size", (size + 2) + "px");
+                    $.cookie("homeFontSize", (size + 2) + "px");
+                }
+            });
+            $("#fontSub").click(function () {
+                var size = parseInt($("body").css("font-size").replace("px"));
+                if (size > 14) {
+                    $("body").css("font-size", (size - 2) + "px");
+                    $.cookie("homeFontSize", (size - 2) + "px");
+                }
+            });
+            $("#fontNormal").click(function () {
+                $("body").css("font-size", "14px");
+                $.cookie("homeFontSize", "14px");
+            });
+            //$.get("/statics/tmpl/links.html",function(r){
+            //    $.tmpl(r,data).appendTo("#mainlink");
+            //});
+
+            $("script[type='text/tmpl']").each(function(){
+                $(this).text(function(){
+                    return $(this).text().replace(/\[\[/g,"{ {".replace(/\s/g,"")).replace(/\]\]/g,"} }".replace(/\s/g,""));
+                });
+            });
+            $("#linkTmpl").tmpl(data).appendTo("#mainlink");
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="head-main">
+                <h1 class="logo">{{ domain.title }}<span class="font" id="fontAdd">字号+</span><span
+                    class="font" id="fontSub">字号-</span><span class="font" id="fontNormal">正常字号</span>
+                </h1>
+            </div>
+        </div>
+        <div class="main">
+            <div id="col1">
+                <div id="weather">
+                    <iframe src="http://i.theworld.cn/weather.html" frameborder="0" scrolling="no" width="220"
+                        height="150"></iframe>
+                </div>
+                <div id="mainlink">
+                </div>
+                <script type="text/tmpl" id="linkTmpl">
+                    <div class="linkList">
+                        <span>${tag}</span>
+                        <ul>
+                            [[each links]]
+                            <li><a href="${url}">${title}</a>
+                            [[/each]]
+                        </ul>
+                    </div>
+                </script>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="copyright">
+                &copy; 版权所有
+                <script type="text/javascript">
+                    document.write(new Date().getFullYear())</script>
+                {{ domain.title }} <a href="/admin">管理</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

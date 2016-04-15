@@ -1,0 +1,15 @@
+﻿
+{% extends "baseOld.html" %}
+{% block header %}
+    <title>{{ domain.title }}</title>
+<link href="//www.wuyuanhe.com/statics/css/mainv2.css?v=20120522" rel="stylesheet" type="text/css"
+    id="theme" />
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+{% endblock %}
+{% block content %}
+            <div id="mibaoka" style="text-align: center;"></div>
+<script type="text/javascript">
+    swfobject.embedSWF("/statics/flash/mibaoka.swf", "mibaoka", "300", "500", "9.0.0");
+</script>
+</div>
+   {% endblock %}

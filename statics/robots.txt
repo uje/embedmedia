@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin
+Disallow: /statics/.*
+Disallow: /admin/.*
+Disallow: /getlinks

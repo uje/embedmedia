@@ -1,0 +1,116 @@
+﻿
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>收藏夹</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body { font-family: 'Microsoft Yahei', '宋体', 'arial'; }
+        header.navbar .navbar-brand { font-size: 24px; color: #fff; }
+        .jumbotron { background: #ECF0F1; padding-top: 68px; padding-bottom: 20px; text-align: center; }
+        .jumbotron .description { margin-bottom: 50px; }
+        .section { text-indent: 2em; text-align: left; }
+
+        .thumbnail .caption { padding-top: 30px; min-height: 180px; }
+        .thumbnail h3 { margin: 0; line-height: 80px; text-align: center; color: #fff; }
+        .easy-use h3 { background: #1ABC9C; }
+        .easy-manage h3 { background: #B94A48; }
+        .easy-share h3 { background: #6D3353; } 
+
+        .footer { height: 120px; background: #F7F7F9; padding-top: 30px; }
+
+        @media screen and (min-height: 680px){
+            .footer { position: fixed; bottom: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar navbar-inverse navbar-fixed-top"  role="banner">
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" role="navigation">
+                    <span class="sr-only">展开导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.ruguo.info">收藏夹</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="/admin">管理</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+                            示例
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.wuyuanhe.com" target="_blank">风语</a></li>
+                            <li><a href="http://hy.ruguo.info" target="_blank">Alice的收藏夹</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="http://www.wuyuanhe.com/about">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>收藏夹</h1>
+            <p class="description section">收藏夹是我司推出的一款网络书签产品。它是永久免费的，而且使用方便、管理方便；并且可以与他（她）人分享。如果您需要注册请点击以下的注册按钮：</p>
+            <p>
+                <a href="/admin" type="button" class="btn btn-primary btn-lg" role="button">生成我的收藏夹</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail easy-use">
+                    <h3>使用方便</h3>
+                    <div class="caption">
+                        <p class="section">不论您在何处，只要您能连接网络，打开浏览器，输入我们提供给您的网址，您就可以使用您专属的收藏夹。</p>
+                        <p class="section">您也可以使用我们为您提供的google chrome插件进入访问。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail easy-manage">
+                    <h3>管理方便</h3>
+                    <div class="caption">
+                        <p class="section">我们为您提供简洁易用的管理界面，无需过多的操作，您即可找到您想要的功能。</p>
+                        <p class="section">您也可以使用我们为您提供的google chrome插件进入收藏网址。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail easy-share">
+                    <h3>便于分享</h3>
+                    <div class="caption">
+                        <p class="section">您只需要把我们为您提供的网址通过QQ、微信或者其它社交平台，您的好友即可使用。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; <a href="http://www.ruguo.info">www.ruguo.info</a></p>
+            <p>Code licensed under Apache License v2.0, documentation under CC BY 3.0.</p>
+        </div>
+    </footer>
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

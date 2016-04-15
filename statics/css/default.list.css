@@ -1,0 +1,10 @@
+﻿
+#mainer { overflow-y: auto; }
+
+/*****盒子*****/
+.box { margin: 0px 0px 10px 0px; padding: 5px; }
+    .box .inner-box { background: #FFF; font-size: 13px; /*padding: 5px 5px 5px 5px;*/ }
+        .box .inner-box h2 { text-align: left; border-bottom: 1px dashed #EEE; font-size: 16px; padding-bottom: 3px; color: #666; display: inline-block; }
+        .box .inner-box .content { text-align: left; }
+        .box .inner-box a { margin-right: 20px; line-height: 30px; display: block; float: left; height: 30px; overflow: hidden; }
+            .box .inner-box a:hover { text-decoration: underline; }
